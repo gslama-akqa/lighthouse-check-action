@@ -32,5 +32,6 @@ jobs:
           git lfs track "node_modules/puppeteer/.local-chromium/linux-737027/chrome-linux/chrome"
           git add node_modules/puppeteer/.local-chromium/linux-737027/chrome-linux/chrome
       - name: Push files
+        run: |
           git commit -m "released new version"
           git push --force https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY $(node -p -e "require('./package.json').version")
