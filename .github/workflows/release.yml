@@ -26,11 +26,11 @@ jobs:
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git add -A
-      - name: handle heavy file
-        run: |
-          git rm node_modules/puppeteer/.local-chromium/linux-*/chrome-linux/chrome
-          git lfs track "node_modules/puppeteer/.local-chromium/linux-*/chrome-linux/chrome"
-          git add node_modules/puppeteer/.local-chromium/linux-*/chrome-linux/chrome
+      # - name: handle heavy file
+      #   run: |
+      #     git rm node_modules/puppeteer/.local-chromium/linux-*/chrome-linux/chrome
+      #     git lfs track "node_modules/puppeteer/.local-chromium/linux-*/chrome-linux/chrome"
+      #     git add node_modules/puppeteer/.local-chromium/linux-*/chrome-linux/chrome
       - name: Push files
         run: |
           git commit -m "released new version"
