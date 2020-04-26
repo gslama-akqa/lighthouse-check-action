@@ -19,6 +19,8 @@ jobs:
         run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
       - name: npm install
         run: npm install
+      - name: handle heavy file
+        run: git lfs track "*/chrome"
       - name: add and push
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
