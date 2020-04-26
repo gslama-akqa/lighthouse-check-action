@@ -19,7 +19,7 @@ jobs:
         run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
       - name: npm install
         run: npm install
-      - name: add and push
+      - name: Add files
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
@@ -32,8 +32,8 @@ jobs:
       #     git lfs track "node_modules/puppeteer/.local-chromium/linux-*/chrome-linux/chrome"
       #     git add node_modules/puppeteer/.local-chromium/linux-*/chrome-linux/chrome
       - name: Push files
-      env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}  
-      run: |
-          git commit -m "released new version"
-          git push --force https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY $(node -p -e "require('./package.json').version")
+        env:
+            GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}  
+        run: |
+            git commit -m "released new version"
+            git push --force https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY $(node -p -e "require('./package.json').version")
