@@ -28,7 +28,7 @@ jobs:
           git add -A
       - name: handle heavy file
         run: |
-          git rm node_modules/puppeteer/.local-chromium/linux-*/chrome-linux/chrome
+          git rm --cached node_modules/puppeteer/.local-chromium/linux-*/chrome-linux/chrome
           git lfs track "node_modules/puppeteer/.local-chromium/linux-*/chrome-linux/chrome"
           git add node_modules/puppeteer/.local-chromium/linux-*/chrome-linux/chrome
       - name: Push files
