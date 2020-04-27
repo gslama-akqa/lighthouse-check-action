@@ -1,2 +1,2 @@
 */chrome filter=lfs diff=lfs merge=lfs -text
-node_modules/puppeteer/.local-chromium/mac-737027/chrome-mac/Chromium.app/Contents/Frameworks/Chromium[[:space:]]Framework.framework/Versions/81.0.4044.0/Chromium/[[:space:]]Framework filter=lfs diff=lfs merge=lfs -text
+
